@@ -70,7 +70,6 @@
             #size-cells = <0>;
 
             force_sens_0: nau7802_0 {
-                // label = "NAU7802_1";
                 compatible = "nuvoton,nau7802_loadcell";
                 reg = <0x2A>;
                 drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
@@ -85,7 +84,6 @@
             #size-cells = <0>;
 
             force_sens_1: nau7802_1 {
-                // label = "NAU7802_1";
                 compatible = "nuvoton,nau7802_loadcell";
                 reg = <0x2A>;
                 drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
@@ -100,7 +98,6 @@
             #size-cells = <0>;
 
             force_sens_2: nau7802_2 {
-                // label = "NAU7802_1";
                 compatible = "nuvoton,nau7802_loadcell";
                 reg = <0x2A>;
                 drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
@@ -115,7 +112,6 @@
             #size-cells = <0>;
 
             force_sens_3: nau7802_3 {
-                // label = "NAU7802_1";
                 compatible = "nuvoton,nau7802_loadcell";
                 reg = <0x2A>;
                 drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
