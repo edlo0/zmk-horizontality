@@ -69,9 +69,13 @@
             #address-cells = <1>;
             #size-cells = <0>;
 
-            temp_sens_0: tmp11x@49 {
-                compatible = "ti,tmp11x";
-                reg = <0x49>;
+            force_sens_0: nau7802_0 {
+                // label = "NAU7802_1";
+                compatible = "nuvoton,nau7802_loadcell";
+                reg = <0x2A>;
+                drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
+                conversions-per-second = <320>; //SPS
+                gain = <128>;
             };
         };
 
@@ -80,13 +84,46 @@
             #address-cells = <1>;
             #size-cells = <0>;
 
-            temp_sens_1: tmp11x@49 {
-                compatible = "ti,tmp11x";
-                reg = <0x49>;
+            force_sens_1: nau7802_1 {
+                // label = "NAU7802_1";
+                compatible = "nuvoton,nau7802_loadcell";
+                reg = <0x2A>;
+                drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
+                conversions-per-second = <320>; //SPS
+                gain = <128>;
+            };
+        };
+
+        mux_i2c@2 {
+            reg = <2>;
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            force_sens_2: nau7802_2 {
+                // label = "NAU7802_1";
+                compatible = "nuvoton,nau7802_loadcell";
+                reg = <0x2A>;
+                drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
+                conversions-per-second = <320>; //SPS
+                gain = <128>;
+            };
+        };
+
+        mux_i2c@3 {
+            reg = <3>;
+            #address-cells = <1>;
+            #size-cells = <0>;
+
+            force_sens_3: nau7802_3 {
+                // label = "NAU7802_1";
+                compatible = "nuvoton,nau7802_loadcell";
+                reg = <0x2A>;
+                drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
+                conversions-per-second = <320>; //SPS
+                gain = <128>;
             };
         };
     };
-
 };
 
 &i2c1 {
