@@ -10,5 +10,9 @@ manifest:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    - name: NAU7802_LOADCELL
+      path: modules/nau7802_loadcell
+      revision: refs/tags/zephyr-v3.7.0
+      url: https://github.com/nobodyguy/nau7802_loadcell_zephyr_driver
   self:
     path: config
