@@ -52,10 +52,10 @@ static int process_force_sensors(void) {
 };
 
 static void force_sensor_main(void) {
-	ret = process_force_sensors()
+	ret = process_force_sensors();
 	if (ret != 0) {
-		return ret
-	}
+		return ret;
+	};
 
 	if (trackpad_down == false && force_value > TRACKPAD_FORCE_THRESHOLD_DOWN) {
 		trackpad_down = true;
@@ -64,7 +64,7 @@ static void force_sensor_main(void) {
 		trackpad_down = false;
 		input_report_key(force_sensors[0], INPUT_BTN_0, false, false, K_FOREVER);
 	};
-}
+};
 
 for (int i = 0; i <= 3; i++) {
 	struct sensor_trigger trig = {
@@ -74,5 +74,5 @@ for (int i = 0; i <= 3; i++) {
 	if (sensor_trigger_set(nau7802, &trig, force_sensor_main) < 0) {
 		LOG_ERR("Cannot configure trigger");
 		return;
-	}
-}
+	};
+};

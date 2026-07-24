@@ -4,6 +4,8 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    - name: badjeff
+      url-base: https://github.com/badjeff
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
@@ -14,5 +16,11 @@ manifest:
       path: modules/nau7802_loadcell
       revision: refs/tags/zephyr-v3.7.0
       url: https://github.com/elvishuynh/nau7802_loadcell_zephyr_driver/
+    - name: zmk-output-behavior-listener
+      remote: badjeff
+      revision: main
+    - name: zmk-drv2605-driver
+      remote: badjeff
+      revision: main
   self:
     path: config
