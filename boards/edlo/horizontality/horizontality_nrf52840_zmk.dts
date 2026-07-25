@@ -63,7 +63,7 @@
         bindings = < &ob_lra_in >;
 
         all-state;
-    }
+    };
 
     obl__btn1_out {
         compatible = "zmk,output-behavior-listener";
@@ -74,14 +74,14 @@
         bindings = < &ob_lra_out >;
 
         all-state;
-    }
+    };
 
     aliases {
         nau7802_adc_0 = &nau7802_adc_0;
         nau7802_adc_1 = &nau7802_adc_1;
         nau7802_adc_2 = &nau7802_adc_2;
         nau7802_adc_3 = &nau7802_adc_3;
-    }
+    };
 };
 
 &pinctrl {
