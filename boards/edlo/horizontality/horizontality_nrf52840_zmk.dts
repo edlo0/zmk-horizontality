@@ -206,7 +206,7 @@
             nau7802_adc_3 {
                 compatible = "nuvoton,nau7802_loadcell";
                 reg = <0x2A>;
-                drdy-gpios = <&gpiod # GPIO_ACTIVE_HIGH>;
+                drdy-gpios = <&gpio# # GPIO_ACTIVE_HIGH>;
                 conversions-per-second = <320>; //SPS
                 gain = <128>;
             };
@@ -230,7 +230,14 @@
         standby-ms = <1000>;
     };
 
+    trackpad: maxtouch@4a {
+        compatible = "microchip,maxtouch";
+        reg = <0x4a>;
+        chg-gpios = <&gpio# # (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
+        swap-xy;
+        repeat-each-cycle;
+    };
 };
 
 zephyr_udc0: &usbd {

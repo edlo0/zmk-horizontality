@@ -9,3 +9,19 @@ config BOARD_HORIZONTALITY
     imply RETAINED_MEM
     imply RETENTION
     imply RETENTION_BOOT_MODE
+    imply ZMK_MOUSE
+	imply ZMK_TRACKPAD
+
+# trackpad 1:1
+
+config ZMK_TRACKPAD_LOGICAL_X
+	default 2000
+
+config ZMK_TRACKPAD_LOGICAL_Y
+	default 2000
+
+config ZMK_TRACKPAD_PHYSICAL_X
+	default 910
+
+config ZMK_TRACKPAD_PHYSICAL_Y
+	default 910
