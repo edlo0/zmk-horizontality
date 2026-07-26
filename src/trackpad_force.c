@@ -66,13 +66,17 @@ static void force_sensor_main(void) {
 	};
 };
 
-for (int i = 0; i <= 3; i++) {
-	struct sensor_trigger trig = {
-		.type = SENSOR_TRIG_DATA_READY,
-		.chan = SENSOR_CHAN_ALL,
+int main(void) {
+	for (int i = 0; i <= 3; i++) {
+		struct sensor_trigger trig = {
+			.type = SENSOR_TRIG_DATA_READY,
+			.chan = SENSOR_CHAN_ALL,
+		};
+		if (sensor_trigger_set(nau7802, &trig, force_sensor_main) < 0) {
+			LOG_ERR("Cannot configure trigger");
+			return;
+		};
 	};
-	if (sensor_trigger_set(nau7802, &trig, force_sensor_main) < 0) {
-		LOG_ERR("Cannot configure trigger");
-		return;
-	};
-};
+	return 0;
+}
+
